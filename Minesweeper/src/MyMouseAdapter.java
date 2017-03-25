@@ -98,7 +98,9 @@ public class MyMouseAdapter extends MouseAdapter {
 						//Do nothing
 					} else {
 						
-							
+							//if for the mines(black color)
+						
+						
 							Color newColor = Color.WHITE;
 							
 							myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = newColor;
