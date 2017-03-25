@@ -87,13 +87,13 @@ public class MyPanel extends JPanel {
 		if (y < 0) {   //Above the grid
 			return -1;
 		}
-		if ((x % (INNER_CELL_SIZE +1) == 0) || (y % (INNER_CELL_SIZE +1) == 0)) {   //Coordinate is at an edge; not inside a cell
+		if ((x % (INNER_CELL_SIZE+1 ) == 0) || (y % (INNER_CELL_SIZE +1) == 0)) {   //Coordinate is at an edge; not inside a cell
 			return -1;
 		}
 		x = x / (INNER_CELL_SIZE + 1);
 		y = y / (INNER_CELL_SIZE + 1);
 		//
-		if (x < 0 || x > TOTAL_COLUMNS - 1 || y < 0 || y > TOTAL_ROWS - 2) {   //Outside the rest of the grid
+		if (x < 0 || x > TOTAL_COLUMNS - 1 || y < 0 || y > TOTAL_ROWS - 1) {   //Outside the rest of the grid
 			return -1;
 		}
 		return x;
@@ -110,13 +110,13 @@ public class MyPanel extends JPanel {
 		if (y < 0) {   //Above the grid
 			return -1;
 		}
-		if ((x % (INNER_CELL_SIZE + 1) == 0) || (y % (INNER_CELL_SIZE + 1) == 0)) {   //Coordinate is at an edge; not inside a cell
+		if ((x % (INNER_CELL_SIZE+1 ) == 0) || (y % (INNER_CELL_SIZE +1) == 0)) {   //Coordinate is at an edge; not inside a cell
 			return -1;
 		}
 		x = x / (INNER_CELL_SIZE + 1);
 		y = y / (INNER_CELL_SIZE + 1);
 		//
-		if (x < 0 || x > TOTAL_COLUMNS - 1 || y < 0 || y > TOTAL_ROWS - 2) {   //Outside the rest of the grid
+		if (x < 0 || x > TOTAL_COLUMNS - 1 || y < 0 || y > TOTAL_ROWS - 1) {   //Outside the rest of the grid
 			return -1;
 		}
 		return y;

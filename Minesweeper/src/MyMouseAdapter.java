@@ -33,7 +33,8 @@ public class MyMouseAdapter extends MouseAdapter {
 			myPanel.mouseDownGridY = myPanel.getGridY(x, y);
 			myPanel.repaint();
 			break;
-		case 3:		Component c1 = e.getComponent();
+		case 3:	//Right mouse button	
+			Component c1 = e.getComponent();
 		while (!(c1 instanceof JFrame)) {
 			c = c1.getParent();
 			if (c == null) {
@@ -110,7 +111,7 @@ public class MyMouseAdapter extends MouseAdapter {
 			
 			myPanel.repaint();
 			break;
-		case 3:		//Left mouse button
+		case 3:		//right mouse button paints red
 			
 			Component c2 = e.getComponent();
 			while (!(c2 instanceof JFrame)) {
