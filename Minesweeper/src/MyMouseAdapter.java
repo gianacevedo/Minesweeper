@@ -8,7 +8,11 @@ import java.util.Random;
 import javax.swing.JFrame;
 
 public class MyMouseAdapter extends MouseAdapter {
-	
+	int counter = 0;
+	int[] mineArrayX = Mines.mineCreatorX();
+	int[] mineArrayY = Mines.mineCreatorY();
+	final int rows = 9;
+	final int columns =9;
 	public void mousePressed(MouseEvent e) {
 		switch (e.getButton()) {
 		case 1:		//Left mouse button
@@ -83,6 +87,20 @@ public class MyMouseAdapter extends MouseAdapter {
 			myPanel.y = y;
 			int gridX = myPanel.getGridX(x, y);
 			int gridY = myPanel.getGridY(x, y);
+			
+			
+			if(counter ==0){
+				for (int i = 0; i < rows; i++) {
+					if ((mineArrayX[i] == myPanel.mouseDownGridX)&&(mineArrayY[i] == myPanel.mouseDownGridY)) {
+						for (int j = 0; j < columns; j++) {
+						myPanel.colorArray[mineArrayX[j]][mineArrayY[j]] = Color.BLACK;
+						myPanel.repaint();
+						counter++;
+						}
+					}
+				}
+			}
+			
 			if ((myPanel.mouseDownGridX == -1) || (myPanel.mouseDownGridY == -1)) {
 				//Had pressed outside
 				//Do nothing

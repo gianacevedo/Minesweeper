@@ -1,14 +1,35 @@
-import java.util.Random;
+public class Mines {
 
-public class Mines extends MyMouseAdapter {
-	 private int x=0;
-	 private int y=0;
-	 Random r = new Random();
-Mines[] theMines = new Mines[10];
+	public static int[] mineCreatorX() {
+		int[] a = new int[9];
+		for (int i = 0; i < 9; i++) {
+			a[i] = (int) (Math.random() * 9);
+			for (int j = 0; j < i; j++) {
+				if (a[i] == a[j]) {
+					i--; 
+					break;
 
-public void oneMine(){
-	this.x = r.nextInt(9);
-	this.y = r.nextInt(9);
-	
+				}
+
+			}
+
+		}
+		return a;
+	}
+	public static int[] mineCreatorY() {
+		int[] a = new int[9];
+		for (int i = 0; i < 9; i++) {
+			a[i] = (int) (Math.random() * 9);
+			for (int j = 0; j < i; j++) {
+				if (a[i] == a[j]) {
+					i--; 
+					break;
+
+				}
+
+			}
+
+		}
+		return a;
 }
 }
