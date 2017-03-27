@@ -88,7 +88,7 @@ public class MyMouseAdapter extends MouseAdapter {
 			int gridX = myPanel.getGridX(x, y);
 			int gridY = myPanel.getGridY(x, y);
 			
-			
+			Color newColor = null;
 			if(counter ==0){
 				for (int i = 0; i < rows; i++) {
 					if ((mineArrayX[i] == myPanel.mouseDownGridX)&&(mineArrayY[i] == myPanel.mouseDownGridY)) {
@@ -109,27 +109,36 @@ public class MyMouseAdapter extends MouseAdapter {
 					//Is releasing outside
 					//Do nothing
 				} 
-				
+
 				else {
 					if ((myPanel.mouseDownGridX != gridX) || (myPanel.mouseDownGridY != gridY)) {
 						//Released the mouse button on a different cell where it was pressed
 						//Do nothing
 					} else {
-						
-							//if for the mines(black color)
-						
-						
-							Color newColor = Color.WHITE;
-							
-							myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = newColor;
+
+						//if for the mines(black color) can't paint them white.
+						if(myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] !=Color.BLACK){
+
+							Color wColor = Color.WHITE;
+
+							do {
+								newColor = Color.LIGHT_GRAY;
+
+							} 
+							while((newColor.equals(wColor)));
+							myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = wColor;
 							myPanel.repaint();
-						
+
 						}
+
+
+
 					}
-			
 				}
+
+			}
+
 			
-			myPanel.repaint();
 			break;
 		case 3:		//right mouse button paints red
 			
@@ -168,9 +177,9 @@ public class MyMouseAdapter extends MouseAdapter {
 					} else {
 						
 							
-							Color newColor = Color.RED;
+							Color newColor1 = Color.RED;
 							
-							myPanel1.colorArray[myPanel1.mouseDownGridX][myPanel1.mouseDownGridY] = newColor;
+							myPanel1.colorArray[myPanel1.mouseDownGridX][myPanel1.mouseDownGridY] = newColor1;
 							myPanel1.repaint();
 						
 						}
