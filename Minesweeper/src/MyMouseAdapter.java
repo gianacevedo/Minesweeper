@@ -87,7 +87,8 @@ public class MyMouseAdapter extends MouseAdapter {
 			myPanel.y = y;
 			int gridX = myPanel.getGridX(x, y);
 			int gridY = myPanel.getGridY(x, y);
-			
+			 
+			//Mines 
 			Color newColor = null;
 			if(counter ==0){
 				for (int i = 0; i < rows; i++) {
@@ -96,6 +97,8 @@ public class MyMouseAdapter extends MouseAdapter {
 						myPanel.colorArray[mineArrayX[j]][mineArrayY[j]] = Color.BLACK;
 						myPanel.repaint();
 						counter++;
+						
+						
 						}
 					}
 				}
