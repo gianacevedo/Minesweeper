@@ -95,6 +95,7 @@ public class MyMouseAdapter extends MouseAdapter {
 					if ((mineArrayX[i] == myPanel.mouseDownGridX)&&(mineArrayY[i] == myPanel.mouseDownGridY)) {
 						for (int j = 0; j < columns; j++) {
 						myPanel.colorArray[mineArrayX[j]][mineArrayY[j]] = Color.BLACK;
+						myPanel.colorArray[mineArrayX[j]][mineArrayY[j]] = Color.BLACK;
 						myPanel.repaint();
 						counter++;
 						
