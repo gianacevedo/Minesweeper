@@ -2,10 +2,13 @@ public class Mines {
 
 	public static int[] mineCreatorX() {
 		int[] a = new int[9];
+		
 		for (int i = 0; i < 9; i++) {
 			a[i] = (int) (Math.random() * 9);
 			
 			for (int j = 0; j < i; j++) {
+				
+	
 				if (a[i] == a[j]) {
 					i--; 
 					break;
@@ -19,10 +22,14 @@ public class Mines {
 	}
 	public static int[] mineCreatorY() {
 		int[] a = new int[9];
+		int[] b = new int[9];
+		int[][] mineAdjArray = new int[9][9];
 		for (int i = 0; i < 9; i++) {
 			a[i] = (int) (Math.random() * 9);
 			
 			for (int j = 0; j < i; j++) {
+				
+				
 				if (a[i] == a[j]) {
 					i--; 
 					break;
