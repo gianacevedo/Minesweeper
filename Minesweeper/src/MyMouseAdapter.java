@@ -11,6 +11,8 @@ public class MyMouseAdapter extends MouseAdapter {
 	int counter = 0;
 	int[] mineArrayX = Mines.mineCreatorX();
 	int[] mineArrayY = Mines.mineCreatorY();
+	int[] adjX = adjacent.adjCellsX(mineArrayX);
+	int[] adjY = adjacent.adjCellsY(mineArrayY);
 	final int rows = 9;
 	final int columns =9;
 	public void mousePressed(MouseEvent e) {
@@ -92,11 +94,13 @@ public class MyMouseAdapter extends MouseAdapter {
 			Color newColor = null;
 			if(counter ==0){
 				for (int i = 0; i < rows; i++) {
+					
 					if ((mineArrayX[i] == myPanel.mouseDownGridX)&&(mineArrayY[i] == myPanel.mouseDownGridY)) {
 						for (int j = 0; j < columns; j++) {
 						myPanel.colorArray[mineArrayX[j]][mineArrayY[j]] = Color.BLACK;
-						myPanel.colorArray[mineArrayX[j]][mineArrayY[j]] = Color.BLACK;
 						myPanel.repaint();
+						
+						
 						counter++;
 						
 						
@@ -122,7 +126,8 @@ public class MyMouseAdapter extends MouseAdapter {
 
 						//if for the mines(black color) can't paint them white.
 						if(myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] !=Color.BLACK){
-
+							
+							
 							Color wColor = Color.WHITE;
 
 							do {
@@ -131,6 +136,7 @@ public class MyMouseAdapter extends MouseAdapter {
 							} 
 							while((newColor.equals(wColor)));
 							myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = wColor;
+							
 							myPanel.repaint();
 
 						}
