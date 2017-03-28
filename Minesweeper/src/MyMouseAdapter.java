@@ -11,7 +11,8 @@ public class MyMouseAdapter extends MouseAdapter {
 	int counter = 0;
 	int[] mineArrayX = Mines.mineCreatorX();
 	int[] mineArrayY = Mines.mineCreatorY();
-	
+	int[][] mine2DArrayX = MinesAndAdjacent.mineCreatorX();
+	int[][] mine2DArrayY = MinesAndAdjacent.mineCreatorY();
 	final int rows = 9;
 	final int columns =9;
 	public void mousePressed(MouseEvent e) {
@@ -92,7 +93,7 @@ public class MyMouseAdapter extends MouseAdapter {
 			
 			
 			//Mines 
-			Color newColor = null;
+			/*Color newColor = null;
 			if(counter ==0){
 				for (int i = 0; i < rows; i++) {
 					
@@ -114,7 +115,33 @@ public class MyMouseAdapter extends MouseAdapter {
 				
 				}
 				
+			}*/
+			Color newColor = null;
+			if(counter ==0){
+				for (int i = 0; i < 9; i++) {
+						
+					if ((mine2DArrayX[i][8] == myPanel.mouseDownGridX)&&(mine2DArrayY[i][8]== myPanel.mouseDownGridY)){
+						
+						for (int j = 0; j < 9; j++) {
+							
+							 
+						myPanel.colorArray[mine2DArrayX[j][8]][mine2DArrayY[j][8]] = Color.BLACK;
+						myPanel.repaint();
+						
+						counter++;
+						
+						}
+						
+						
+					}
+					
+				
+				}
+				
 			}
+			
+			
+			
 			
 			
 			if ((myPanel.mouseDownGridX == -1) || (myPanel.mouseDownGridY == -1)) {
