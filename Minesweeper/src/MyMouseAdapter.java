@@ -92,7 +92,7 @@ public class MyMouseAdapter extends MouseAdapter {
 			 
 			
 			
-			//Mines 
+			//Mines not used anymore because the class Mines and Adjacent was created
 			/*Color newColor = null;
 			if(counter ==0){
 				for (int i = 0; i < rows; i++) {
@@ -141,9 +141,53 @@ public class MyMouseAdapter extends MouseAdapter {
 			}
 			
 			
+	//Code for the white cells fill		
+if(myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] ==Color.WHITE){
+	
+	
+	
+	while(myPanel.mouseDownGridX!=9 || myPanel.mouseDownGridY!=9){
+		myPanel.mouseDownGridX++;
+		myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = Color.WHITE;
+		myPanel.repaint();
+		for (int i = 0; i < 9; i++){
+			for (int z = 0; z < 9; z++)	{
+
+				if(myPanel.mouseDownGridX== mine2DArrayX[i][z] && myPanel.mouseDownGridY== mine2DArrayY[i][z]){
+					myPanel.mouseDownGridY++;
+					break;
+				}
+			}
 			
+		}
+	}
+	
+	
+	while(myPanel.mouseDownGridX!=-1 || myPanel.mouseDownGridY!=-1){
+		myPanel.mouseDownGridX--;
+		myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = Color.WHITE;
+		myPanel.repaint();
+		for (int w = 0; w < 9; w++){
+			for (int z = 0; z < 9; z++)	{
+
+				if(myPanel.mouseDownGridX== mine2DArrayX[w][z] && myPanel.mouseDownGridY== mine2DArrayY[w][z]){
+					myPanel.mouseDownGridY--;
+					break;
+				}
+			}
+
 			
-			
+		}
+
+
+	}
+}
+
+
+
+
+
+
 			if ((myPanel.mouseDownGridX == -1) || (myPanel.mouseDownGridY == -1)) {
 				//Had pressed outside
 				//Do nothing
@@ -174,6 +218,49 @@ public class MyMouseAdapter extends MouseAdapter {
 							
 							myPanel.repaint();
 
+							
+							//test code 
+							/*if(myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] ==Color.WHITE){
+								
+								
+								
+								while(myPanel.mouseDownGridX!=9 || myPanel.mouseDownGridY!=9){
+									myPanel.mouseDownGridX++;
+									myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = Color.WHITE;
+									myPanel.repaint();
+									for (int i = 0; i < 9; i++){
+										for (int z = 0; z < 9; z++)	{
+
+											if(myPanel.mouseDownGridX== mine2DArrayX[i][z] && myPanel.mouseDownGridY== mine2DArrayY[i][z]){
+												myPanel.mouseDownGridY++;
+												break;
+											}
+										}
+										
+									}
+								}
+								
+								
+								while(myPanel.mouseDownGridX!=-1 || myPanel.mouseDownGridY!=-1){
+									myPanel.mouseDownGridX--;
+									myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = Color.WHITE;
+									myPanel.repaint();
+									for (int w = 0; w < 9; w++){
+										for (int z = 0; z < 9; z++)	{
+
+											if(myPanel.mouseDownGridX== mine2DArrayX[w][z] && myPanel.mouseDownGridY== mine2DArrayY[w][z]){
+												myPanel.mouseDownGridY--;
+												break;
+											}
+										}
+
+										
+									}
+
+
+								}
+							}*/
+							//end test code
 						}
 
 
