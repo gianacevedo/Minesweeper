@@ -137,57 +137,7 @@ public class MyMouseAdapter extends MouseAdapter {
 			}
 
 
-			//Code for the white cells fill		
-			/*if(myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] ==Color.WHITE){
-				
-				
-				
-				while(myPanel.mouseDownGridX!=9 || myPanel.mouseDownGridY!=9){
-					int planeX=myPanel.mouseDownGridX;
-					int planeY=myPanel.mouseDownGridY;
-					int i=0;
-					while(planeX!= mine2DArrayX[i][4]){
-						
-
-							if(planeX== mine2DArrayX[i][4]-1 && planeY== mine2DArrayY[i][4]){
-								planeY++;
-								planeX=myPanel.mouseDownGridX;
-								break;
-							}
-						
-						i++;
-					}
-					planeX++;
-					myPanel.colorArray[planeX][planeY] = Color.WHITE;
-					myPanel.repaint();
-				}
-				
-				
-				while(myPanel.mouseDownGridX!=-1 || myPanel.mouseDownGridY!=-1){
-					int planeX1=myPanel.mouseDownGridX;
-					int planeY1=myPanel.mouseDownGridY;
-					int i=0;
-					while(planeX1!= mine2DArrayX[i][4]){
-						
-
-						if(planeX1== mine2DArrayX[i][4]-1 && planeY1== mine2DArrayY[i][4]){
-							planeY1--;
-							planeX1=myPanel.mouseDownGridX;
-							break;
-						}
-					
-					i++;
-				}
-					planeX1--;
-					myPanel.colorArray[planeX1][planeY1] = Color.WHITE;
-					myPanel.repaint();
-					
-				}
-			}
-
-
-
-*/
+			
 
 
 
@@ -222,42 +172,47 @@ public class MyMouseAdapter extends MouseAdapter {
 							myPanel.repaint();
 
 
-							//test code 
+							//test code fill cells white
+							
+							
 							if(myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] ==Color.WHITE){
 
-
-
-								while(myPanel.mouseDownGridX!=9 || myPanel.mouseDownGridY!=9){
+								int planeX=myPanel.mouseDownGridX;
+								int planeY=myPanel.mouseDownGridY;
+								while(planeX!=9 && myPanel.mouseDownGridY!=9){
 									for (int i = 0; i < 9; i++){
 
 
-										if(myPanel.mouseDownGridX== mine2DArrayX[i][8]-1 && myPanel.mouseDownGridY== mine2DArrayY[i][8]){
-											myPanel.mouseDownGridY++;
+										if(planeX== mine2DArrayX[i][8]-1 && planeY== mine2DArrayY[i][8]){
+											planeY++;
+											planeX=myPanel.mouseDownGridX;
 											break;
 										}
 
 
 									}
 
-									myPanel.mouseDownGridX++;
-									myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = Color.WHITE;
+									planeX++;
+									myPanel.colorArray[planeX][planeY] = Color.WHITE;
 									myPanel.repaint();
 
 								}
 
-
-								while(myPanel.mouseDownGridX!=-1 || myPanel.mouseDownGridY!=-1){
+								int planeX1=myPanel.mouseDownGridX;
+								int planeY1=myPanel.mouseDownGridY;
+								while(planeX1!=-1 && myPanel.mouseDownGridY!=-1){
 									for (int w = 0; w < 9; w++){
 
 
-										if(myPanel.mouseDownGridX== mine2DArrayX[w][8]+1 && myPanel.mouseDownGridY== mine2DArrayY[w][8]){
-											myPanel.mouseDownGridY--;
+										if(planeX1== mine2DArrayX[w][8]+1 && planeY1== mine2DArrayY[w][8]){
+											planeY1--;
+											planeX1=myPanel.mouseDownGridX;
 											break;
 										}
 
 
-										myPanel.mouseDownGridX--;
-										myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = Color.WHITE;
+										planeX1--;
+										myPanel.colorArray[planeX1][planeY1] = Color.WHITE;
 										myPanel.repaint();
 
 
