@@ -10,8 +10,8 @@ import javax.swing.JOptionPane;
 
 public class MyMouseAdapter extends MouseAdapter {
 	int counter = 0;
-	int[] mineArrayX = Mines.mineCreatorX();
-	int[] mineArrayY = Mines.mineCreatorY();
+/*	int[] mineArrayX = Mines.mineCreatorX();
+	int[] mineArrayY = Mines.mineCreatorY();*/
 	int[][] mine2DArrayX = MinesAndAdjacent.mineCreatorX();
 	int[][] mine2DArrayY = MinesAndAdjacent.mineCreatorY();
 	final int rows = 9;

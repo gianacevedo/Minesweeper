@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class adjacent {
-	
+/*	
 	
 	public static int[] adjCellsX(int[] mineX){
 		
@@ -57,5 +57,5 @@ public static int[] adjCellsY(int[] mineY){
 		return a;
 	}
 	
-	
+	*/
 }

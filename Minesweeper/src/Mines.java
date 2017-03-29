@@ -1,5 +1,5 @@
 public class Mines {
-
+/*
 	public static int[] mineCreatorX() {
 		int[] a = new int[9];
 		
@@ -43,5 +43,5 @@ public class Mines {
 	}
 
 
-
+*/
 }
