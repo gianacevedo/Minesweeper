@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent;
 import java.util.Random;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class MyMouseAdapter extends MouseAdapter {
 	int counter = 0;
@@ -111,7 +112,7 @@ public class MyMouseAdapter extends MouseAdapter {
 					}
 				}
 			}*/
-			
+
 			Color newColor = null;
 			if(counter ==0){
 				for (int i = 0; i < 9; i++) {
@@ -125,6 +126,14 @@ public class MyMouseAdapter extends MouseAdapter {
 							myPanel.repaint();
 
 							counter++;
+							
+							
+							// Shows message when a mine is clicked and closes the program
+							if(counter==9){
+								JOptionPane.showMessageDialog(myFrame, "Game Over");
+								System.exit(0);
+								
+							}
 
 						}
 
@@ -137,7 +146,7 @@ public class MyMouseAdapter extends MouseAdapter {
 			}
 
 
-			
+
 
 
 
@@ -173,13 +182,13 @@ public class MyMouseAdapter extends MouseAdapter {
 
 
 							//test code fill cells white
-							
-							
+
+
 							if(myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] ==Color.WHITE){
 
 								int planeX=myPanel.mouseDownGridX;
 								int planeY=myPanel.mouseDownGridY;
-								while(planeX!=9 && myPanel.mouseDownGridY!=9){
+								while(planeX!=9 && planeY!=9){
 									for (int i = 0; i < 9; i++){
 
 
@@ -190,17 +199,18 @@ public class MyMouseAdapter extends MouseAdapter {
 										}
 
 
+
 									}
 
 									planeX++;
 									myPanel.colorArray[planeX][planeY] = Color.WHITE;
 									myPanel.repaint();
-
+									
 								}
 
 								int planeX1=myPanel.mouseDownGridX;
 								int planeY1=myPanel.mouseDownGridY;
-								while(planeX1!=-1 && myPanel.mouseDownGridY!=-1){
+								while(planeX1!=-1 && planeY1!=-1){
 									for (int w = 0; w < 9; w++){
 
 
@@ -211,17 +221,18 @@ public class MyMouseAdapter extends MouseAdapter {
 										}
 
 
-										planeX1--;
-										myPanel.colorArray[planeX1][planeY1] = Color.WHITE;
-										myPanel.repaint();
+
 
 
 
 									}
-
-
+									planeX1--;
+									myPanel.colorArray[planeX1][planeY1] = Color.WHITE;
+									myPanel.repaint();
+									
 								}
 							}
+
 							//end test code
 						}
 

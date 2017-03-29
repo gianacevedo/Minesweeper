@@ -25,11 +25,7 @@ public class MinesAndAdjacent {
 			
 			for (int j = 0; j < i; j++) {
 				
-				if (a[i] == a[j]) {
-					i--; 
-					break;
-
-				}
+				
 				
 
 			}
