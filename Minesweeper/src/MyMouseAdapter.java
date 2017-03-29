@@ -7,7 +7,7 @@ import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
- 
+  
 public class MyMouseAdapter extends MouseAdapter {
 	int counter = 0;
 	int[][] mine2DArrayX = MinesAndAdjacent.mineCreatorX();
